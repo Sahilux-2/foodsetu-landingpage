@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodSetu - Bridging Farms Directly to Your Table</title>
+    <meta name="description" content="FoodSetu connects local growers directly to kitchens, eliminating middlemen to deliver fresh, seasonal, and sustainably sourced produce at fair prices.">
+    <!-- Google Fonts: Outfit (headings) & Inter (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Premium Glassmorphic Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo" id="logo-link">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-bridge-water"></i>
+                </div>
+                <span>FoodSetu</span>
+            </a>
+            <nav class="nav-menu" id="navigation-menu">
+                <a href="#about" class="nav-link">Our Mission</a>
+                <a href="#produce" class="nav-link">Produce Hub</a>
+                <a href="#trace" class="nav-link active">Traceability</a>
+                <a href="#impact" class="nav-link">Impact Metrics</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn btn-nav" id="btn-header-cta">Get Started</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero-section">
+            <!-- Background Decorative Elements -->
+            <div class="glow-blob glow-blob-1"></div>
+            <div class="glow-blob glow-blob-2"></div>
+            <div class="grid-overlay"></div>
+
+            <div class="hero-container">
+                <!-- Hero Left: Content & CTAs -->
+                <div class="hero-content">
+                    <div class="badge-container">
+                        <span class="pill-badge">
+                            <span class="pulse-dot"></span>
+                            <i class="fa-solid fa-leaf text-green"></i> Direct Farm-to-Table Bridge
+                        </span>
+                    </div>
+                    <h1 class="hero-title">
+                        Bridging the Gap Between <span class="gradient-text">Fresh Farms</span> & Your Table
+                    </h1>
+                    <p class="hero-subtext">
+                        FoodSetu connects local growers directly to kitchens, eliminating middlemen to deliver fresh, seasonal, and sustainably sourced produce within hours while ensuring fair pay to farmers.
+                    </p>
+                    <div class="cta-group">
+                        <button class="btn btn-primary" id="cta-explore-fresh">
+                            Explore Fresh Produce <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <button class="btn btn-secondary" id="cta-how-it-works">
+                            <i class="fa-solid fa-circle-play"></i> Watch Traceability
+                        </button>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="trust-indicators">
+                        <div class="avatars">
+                            <div class="avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&h=80&q=80" alt="User 1"></div>
+                            <div class="avatar"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&h=80&q=80" alt="User 2"></div>
+                            <div class="avatar"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&h=80&q=80" alt="User 3"></div>
+                        </div>
+                        <div class="trust-text">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span>Trusted by 5,000+ kitchens & local restaurants</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right: Interactive Simulator Card -->
+                <div class="hero-interactive">
+                    <div class="simulator-card glass-panel">
+                        <!-- Card Header Selector -->
+                        <div class="sim-header">
+                            <span class="sim-header-title"><i class="fa-solid fa-magnifying-glass-location text-green"></i> Trace Your Food</span>
+                            <div class="crop-tabs">
+                                <button class="crop-tab active" data-crop="avocado" id="tab-avocado">
+                                    <span class="crop-tab-icon">🥑</span> Avocado
+                                </button>
+                                <button class="crop-tab" data-crop="tomatoes" id="tab-tomatoes">
+                                    <span class="crop-tab-icon">🍅</span> Tomatoes
+                                </button>
+                                <button class="crop-tab" data-crop="honey" id="tab-honey">
+                                    <span class="crop-tab-icon">🍯</span> Wild Honey
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Main Screen showing Image & Details -->
+                        <div class="sim-body">
+                            <!-- Visual Crop Panel -->
+                            <div class="crop-visual-panel">
+                                <img src="assets/avocado.png" alt="Fresh Avocado" class="crop-img" id="crop-display-img">
+                                <div class="crop-visual-overlay"></div>
+                                
+                                <!-- Interactive Hotspots -->
+                                <div class="hotspot" id="hotspot-origin" style="top: 30%; left: 40%;">
+                                    <div class="hotspot-trigger"><i class="fa-solid fa-location-dot"></i></div>
+                                    <div class="hotspot-tooltip">
+                                        <h4>Origin Farm</h4>
+                                        <p id="tooltip-farm-name">Green Valley Orchards</p>
+                                    </div>
+                                </div>
+
+                                <div class="hotspot" id="hotspot-temp" style="top: 60%; left: 70%;">
+                                    <div class="hotspot-trigger"><i class="fa-solid fa-temperature-half"></i></div>
+                                    <div class="hotspot-tooltip">
+                                        <h4>Transit Temperature</h4>
+                                        <p id="tooltip-farm-temp">Optimal 4°C</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="farm-overlay-details">
+                                    <div class="farmer-avatar">
+                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80" alt="Farmer" id="farmer-img">
+                                    </div>
+                                    <div class="farmer-meta">
+                                        <span class="farmer-label">Grown By</span>
+                                        <h4 class="farmer-name" id="farmer-name">Amara Vance</h4>
+                                        <span class="farmer-location" id="farmer-location"><i class="fa-solid fa-location-dot"></i> Sonoma Valley, CA</span>
+                                    </div>
+                                    <div class="harvest-badge">
+                                        <i class="fa-solid fa-calendar-check"></i>
+                                        <span id="harvest-date">Harvested: Today, 5:00 AM</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Interactive Supply Chain Comparison -->
+                            <div class="supply-chain-comparison">
+                                <h3 class="comparison-title">Supply Chain Comparison</h3>
+                                
+                                <!-- Route 1: Traditional -->
+                                <div class="route-comparison traditional">
+                                    <div class="route-label">
+                                        <span>Traditional Route</span>
+                                        <span class="route-days text-danger" id="trad-time">5+ Days</span>
+                                    </div>
+                                    <div class="route-nodes">
+                                        <div class="node-line"></div>
+                                        <div class="nodes-container">
+                                            <div class="node active" title="Farm"><i class="fa-solid fa-tractor"></i></div>
+                                            <div class="node active" title="Distributor"><i class="fa-solid fa-warehouse"></i></div>
+                                            <div class="node active" title="Wholesaler"><i class="fa-solid fa-truck"></i></div>
+                                            <div class="node active" title="Retailer"><i class="fa-solid fa-shop"></i></div>
+                                            <div class="node active" title="Kitchen"><i class="fa-solid fa-utensils"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="route-metrics">
+                                        <span>Middlemen: <strong id="trad-middlemen">4 Brokers</strong></span>
+                                        <span>Farmer Payout: <strong class="text-danger" id="trad-payout">30%</strong></span>
+                                    </div>
+                                </div>
+
+                                <!-- Route 2: FoodSetu -->
+                                <div class="route-comparison foodsetu-route">
+                                    <div class="route-label">
+                                        <span class="text-green-glowing">FoodSetu Bridge</span>
+                                        <span class="route-days text-green" id="setu-time">12 Hours</span>
+                                    </div>
+                                    <div class="route-nodes">
+                                        <div class="node-line-glow"></div>
+                                        <div class="nodes-container">
+                                            <div class="node active green" title="Farm"><i class="fa-solid fa-tractor"></i></div>
+                                            <div class="node active green animated" title="FoodSetu Hub"><i class="fa-solid fa-bridge-water"></i></div>
+                                            <div class="node active green" title="Kitchen"><i class="fa-solid fa-utensils"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="route-metrics">
+                                        <span>Middlemen: <strong class="text-green" id="setu-middlemen">Direct (0)</strong></span>
+                                        <span>Farmer Payout: <strong class="text-green-glowing" id="setu-payout">85%</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Realtime Impact Metrics -->
+                            <div class="impact-metrics-grid">
+                                <div class="impact-card">
+                                    <div class="impact-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                                    <div class="impact-data">
+                                        <h3 id="stat-payout">85%</h3>
+                                        <p>Farmer Return</p>
+                                    </div>
+                                </div>
+                                <div class="impact-card">
+                                    <div class="impact-icon"><i class="fa-solid fa-bolt"></i></div>
+                                    <div class="impact-data">
+                                        <h3 id="stat-transit">12 hrs</h3>
+                                        <p>Harvest to Kitchen</p>
+                                    </div>
+                                </div>
+                                <div class="impact-card">
+                                    <div class="impact-icon"><i class="fa-solid fa-seedling"></i></div>
+                                    <div class="impact-data">
+                                        <h3 id="stat-carbon">-75%</h3>
+                                        <p>Carbon P footprint</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Connect External Script -->
+    <script src="app.js"></script>
+</body>
+</html>
