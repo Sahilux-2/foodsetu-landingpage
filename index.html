@@ -1,1 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Setu - Turn Surplus Food Into Meals</title>
+    <meta name="description" content="Food Setu connects food donors, NGOs, volunteers, and communities through a trusted ecosystem that helps reduce food waste and improve food accessibility.">
+    <!-- Google Fonts: Outfit (400, 700) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Premium Glassmorphic Header -->
+    <header class="header" id="main-header">
+        <div class="header-container">
+            <a href="#" class="logo" id="logo-link">
+                <img src="Food_setu_logo.svg" alt="Food Setu Logo" class="logo-icon">
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
+            <nav class="nav-menu" id="navigation-menu">
+                <a href="#problem" class="nav-link">The Problem</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#benefits" class="nav-link">Benefits</a>
+                <a href="#social-proof" class="nav-link">Impact</a>
+                <div class="nav-actions mobile-only">
+                    <button class="btn btn-secondary">Partner With Us</button>
+                    <button class="btn btn-primary">Donate Food</button>
+                </div>
+            </nav>
+            <div class="nav-actions desktop-only">
+                <button class="btn btn-secondary">Partner With Us</button>
+                <button class="btn btn-primary">Donate Food</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: Hero -->
+
+        <section class="hero-section" id="hero">
+            <div class="hero-bg-blobs">
+                <div class="blob blob-1"></div>
+                <div class="blob blob-2"></div>
+            </div>
+            <div class="hero-container">
+                <!-- Left: Content -->
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Turn Surplus Food Into <span class="text-primary">Meals</span> for Those Who Need It Most
+                    </h1>
+                    <p class="hero-subtext">
+                        Food Setu connects restaurants, hotels, caterers, event organizers, and households with verified NGOs to ensure surplus food reaches communities before it goes to waste. Every donation is matched, coordinated, and delivered through a trusted network designed to reduce food waste and improve food accessibility.
+                    </p>
+                    
+                    <div class="cta-group">
+                        <button class="btn btn-primary btn-large">Donate Food</button>
+                        <button class="btn btn-secondary btn-large">Partner With Us</button>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="trust-indicators-grid">
+                        <div class="trust-badge">
+                            <i class="fa-solid fa-shield-check text-primary"></i>
+                            <span>Verified NGO Network</span>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fa-solid fa-bolt text-primary"></i>
+                            <span>Fast Pickup Coordination</span>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fa-solid fa-list-check text-primary"></i>
+                            <span>Food Safety Guidelines</span>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fa-solid fa-location-crosshairs text-primary"></i>
+                            <span>Real-Time Tracking</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Interactive Simulator -->
+                <div class="hero-visual">
+                    <div class="simulator-card glass-panel">
+                        <div class="sim-header">
+                            <div class="sim-status-dot pulse"></div>
+                            <span>Live Surplus Match Simulator</span>
+                        </div>
+                        <div class="sim-body">
+                            <!-- Step 1: Donor -->
+                            <div class="sim-node donor-node" id="sim-donor">
+                                <div class="sim-icon"><i class="fa-solid fa-building-wheat"></i></div>
+                                <div class="sim-details">
+                                    <h4 id="sim-donor-name">College Mess</h4>
+                                    <p id="sim-food-desc">150 Meals Available</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Connection Line -->
+                            <div class="sim-connection">
+                                <div class="sim-line"></div>
+                                <div class="sim-status-badge" id="sim-status">Searching Nearby NGOs...</div>
+                            </div>
+
+                            <!-- Step 2: NGO -->
+                            <div class="sim-node ngo-node pending" id="sim-ngo">
+                                <div class="sim-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                                <div class="sim-details">
+                                    <h4 id="sim-ngo-name">Awaiting Match</h4>
+                                    <p id="sim-ngo-action">...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section 2: The Problem -->
+        <section class="problem-section" id="problem">
+            <div class="section-container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Two Crises. <span class="text-primary">One Opportunity.</span></h2>
+                    <p class="section-desc mx-auto">Every day, perfectly edible food is discarded while communities nearby struggle to access nutritious meals. The challenge is not availability—it's connection.</p>
+                </div>
+
+                <div class="problem-grid">
+                    <!-- Food Waste Card -->
+                    <div class="problem-card waste-card glass-panel">
+                        <div class="problem-icon"><i class="fa-solid fa-trash-can-arrow-up"></i></div>
+                        <h3>Food Waste</h3>
+                        <p>Restaurants, caterers, and college messes generate surplus food daily due to overproduction, event leftovers, and demand fluctuations.</p>
+                        <ul class="problem-list">
+                            <li><i class="fa-solid fa-xmark text-primary"></i> Significant edible food discarded</li>
+                            <li><i class="fa-solid fa-xmark text-primary"></i> Lost nutritional value</li>
+                            <li><i class="fa-solid fa-xmark text-primary"></i> Environmental impact</li>
+                        </ul>
+                    </div>
+
+                    <!-- The Missing Link -->
+                    <div class="missing-link-visual">
+                        <div class="link-circle">
+                            <i class="fa-solid fa-link-slash"></i>
+                            <span class="link-text">The Missing Link</span>
+                        </div>
+                        <p class="link-desc">No reliable, fast system to connect surplus food with those who need it.</p>
+                    </div>
+
+                    <!-- Food Insecurity Card -->
+                    <div class="problem-card insecurity-card glass-panel">
+                        <div class="problem-icon"><i class="fa-solid fa-bowl-rice"></i></div>
+                        <h3>Food Insecurity</h3>
+                        <p>NGOs, community kitchens, and shelters depend on unpredictable donations to serve growing demands from local communities.</p>
+                        <ul class="problem-list">
+                            <li><i class="fa-solid fa-xmark text-primary"></i> Unpredictable food supply</li>
+                            <li><i class="fa-solid fa-xmark text-primary"></i> Resource constraints</li>
+                            <li><i class="fa-solid fa-xmark text-primary"></i> Time spent searching</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Opportunity Banner -->
+                <div class="opportunity-banner glass-panel">
+                    <div class="opp-icon pulse"><i class="fa-solid fa-handshake-angle text-primary"></i></div>
+                    <div class="opp-text">
+                        <h3>The Opportunity</h3>
+                        <p>By creating a trusted and coordinated donation ecosystem, surplus food can be redirected to communities instead of landfills. <strong>Food Setu exists to bridge this gap.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Connect External Script -->
+    <script src="app.js"></script>
+</body>
+</html>
