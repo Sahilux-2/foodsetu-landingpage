@@ -120,4 +120,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Start simulator
     setTimeout(runSimulator, 1000);
+
+    // --- TIMELINE SCROLL LOGIC (HOW IT WORKS SECTION) ---
+    const timelineSteps = document.querySelectorAll('.timeline-step');
+    const timelineProgress = document.getElementById('timeline-progress');
+    
+    function updateTimeline() {
+        if (!timelineProgress || timelineSteps.length === 0) return;
+        
+        const timelineContainer = document.querySelector('.how-it-works-section');
+        if (!timelineContainer) return;
+
+        const scrollPosition = window.scrollY + window.innerHeight * 0.7;
+        let activeIndex = -1;
+
+        timelineSteps.forEach((step, index) => {
+            // Need absolute Y offset relative to document
+            const rect = step.getBoundingClientRect();
+            const stepAbsTop = rect.top + window.scrollY;
+            
+            if (scrollPosition > stepAbsTop) {
+                step.classList.add('active');
+                activeIndex = index;
+            } else {
+                step.classList.remove('active');
+            }
+        });
+
+        // Update progress bar height based on the active index
+        if (activeIndex >= 0) {
+            const activeStep = timelineSteps[activeIndex];
+            // Get relative top inside the timeline line
+            const progressHeight = activeStep.offsetTop + 22; // 22px to center of dot
+            const totalHeight = timelineProgress.parentElement.clientHeight;
+            const percentage = Math.min((progressHeight / totalHeight) * 100, 100);
+            timelineProgress.style.height = `${percentage}%`;
+        } else {
+            timelineProgress.style.height = '0%';
+        }
+    }
+
+    window.addEventListener('scroll', updateTimeline);
+    // Initial check
+    setTimeout(updateTimeline, 500);
 });
