@@ -811,3 +811,102 @@ button {
         padding-left: 60px;
     }
 }
+
+/* --- BENEFITS SECTION --- */
+.benefits-section {
+    padding: 100px 0;
+    background: var(--bg-secondary);
+}
+
+.stakeholder-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 12px 28px;
+    border-radius: 30px;
+    background: var(--bg-primary);
+    border: 1px solid var(--glass-border);
+    color: var(--color-secondary);
+    font-size: 1rem;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+}
+
+.tab-btn:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+}
+
+.tab-btn.active {
+    background: var(--accent-primary);
+    color: #fff;
+    border-color: var(--accent-primary);
+    box-shadow: 0 4px 15px var(--accent-primary-glow);
+}
+
+.benefits-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.benefits-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.benefit-card {
+    padding: 40px 30px;
+    border-radius: 20px;
+    background: var(--bg-primary);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    transition: var(--transition-smooth);
+    text-align: center;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.benefit-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    margin: 0 auto 24px auto;
+}
+
+.benefit-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+}
+
+.benefit-card p {
+    color: var(--color-secondary);
+}
+
+@media (max-width: 992px) {
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
