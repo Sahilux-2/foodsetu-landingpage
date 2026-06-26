@@ -12,7 +12,7 @@
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Main Style Sheet -->
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
     <!-- Premium Glassmorphic Header -->
@@ -337,112 +337,284 @@
                     <div class="demo-phone">
                         <div class="phone-frame">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen checkout-screen" id="donor-screen">
-                                <div class="checkout-header" id="checkout-header-view">
-                                    <i class="fa-solid fa-chevron-left"></i>
-                                    <div class="header-text">
-                                        <span class="small-title">CHECKOUT</span>
-                                        <h2>GURU GOBIND SINGH</h2>
+                            <div class="phone-screen" id="donor-screen">
+                                <!-- Home View -->
+                                <div id="home-view" class="donor-view">
+                                    <div class="home-header">
+                                        <div class="location-bar">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <span>Robinhood, 110034</span>
+                                        </div>
+                                        <div class="search-bar-wrapper">
+                                            <div class="search-bar-input">
+                                                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                                <input type="text" placeholder="Search" readonly>
+                                                <i class="fa-solid fa-microphone mic-icon"></i>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div style="width: 16px;"></div> <!-- Spacer -->
+                                    <div class="filter-bar">
+                                        <div class="filter-chip active">
+                                            <span>filter</span>
+                                            <i class="fa-solid fa-chevron-down"></i>
+                                        </div>
+                                        <div class="filter-chip">Near me</div>
+                                        <div class="filter-chip">Veg</div>
+                                        <div class="filter-chip">Non-veg</div>
+                                        <div class="filter-chip">Rating</div>
+                                    </div>
+                                    <div class="home-body">
+                                        <div class="section-divider">
+                                            <span>MESS HANDPICKED FOR YOU</span>
+                                        </div>
+                                        <div class="horizontal-scroll">
+                                            <!-- Card 1: GGSIPU EDC -->
+                                            <div class="college-card" id="card-ggsipu">
+                                                <div class="card-image-wrapper">
+                                                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=600&auto=format&fit=crop" alt="GGSIPU EDC">
+                                                    <div class="rating-badge">
+                                                        <span>4.5 </span><i class="fa-regular fa-face-smile"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="card-info">
+                                                    <div class="card-title-row">
+                                                        <h4>GGSIPU EDC</h4>
+                                                        <span class="veg-icon"><i class="fa-solid fa-circle"></i></span>
+                                                    </div>
+                                                    <p class="card-food-desc">Palak paneer - Jasmine Rice - Aloo gobhi</p>
+                                                    <div class="card-divider"></div>
+                                                    <p class="card-delivery-info">15 to 20 mins - 4km</p>
+                                                </div>
+                                            </div>
+                                            <!-- Card 2: SHARDA UNIVERSITY -->
+                                            <div class="college-card">
+                                                <div class="card-image-wrapper">
+                                                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600&auto=format&fit=crop" alt="Sharda Univ">
+                                                    <div class="rating-badge">
+                                                        <span>4.2 </span><i class="fa-regular fa-face-smile"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="card-info">
+                                                    <div class="card-title-row">
+                                                        <h4>SHARDA UNIV</h4>
+                                                        <span class="nonveg-icon"><i class="fa-solid fa-caret-up"></i></span>
+                                                    </div>
+                                                    <p class="card-food-desc">Egg - Rice - Curry</p>
+                                                    <div class="card-divider"></div>
+                                                    <p class="card-delivery-info">25 to 30 mins - 8km</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="section-divider">
+                                            <span>WITHIN 5 KILOMETERS</span>
+                                        </div>
+                                        <div class="horizontal-scroll">
+                                            <!-- Card 3: AMITY UNIVERSITY -->
+                                            <div class="college-card">
+                                                <div class="card-image-wrapper">
+                                                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=600&auto=format&fit=crop" alt="Amity University">
+                                                    <div class="rating-badge">
+                                                        <span>4.5 </span><i class="fa-regular fa-face-smile"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="card-info">
+                                                    <div class="card-title-row">
+                                                        <h4>AMITY UNIVERSITY</h4>
+                                                        <span class="veg-icon"><i class="fa-solid fa-circle"></i></span>
+                                                    </div>
+                                                    <p class="card-food-desc">Curry - Rice - Cur...</p>
+                                                    <div class="card-divider"></div>
+                                                    <p class="card-delivery-info">15 to 20 mins - 3km</p>
+                                                </div>
+                                            </div>
+                                            <!-- Card 4: HINDU COLLEGE -->
+                                            <div class="college-card">
+                                                <div class="card-image-wrapper">
+                                                    <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5c?q=80&w=600&auto=format&fit=crop" alt="Hindu College">
+                                                    <div class="rating-badge">
+                                                        <span>4.5 </span><i class="fa-regular fa-face-smile"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="card-info">
+                                                    <div class="card-title-row">
+                                                        <h4>HINDU COLLEGE</h4>
+                                                        <span class="veg-icon"><i class="fa-solid fa-circle"></i></span>
+                                                    </div>
+                                                    <p class="card-food-desc">Dal - Rice - Salad</p>
+                                                    <div class="card-divider"></div>
+                                                    <p class="card-delivery-info">10 to 15 mins - 2km</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bottom-nav">
+                                        <div class="nav-item active">
+                                            <i class="fa-solid fa-house"></i>
+                                            <span>HOME</span>
+                                        </div>
+                                        <div class="nav-item">
+                                            <i class="fa-solid fa-basket-shopping"></i>
+                                            <span>CART</span>
+                                        </div>
+                                        <div class="nav-item">
+                                            <i class="fa-solid fa-arrows-rotate"></i>
+                                            <span>REORDER</span>
+                                        </div>
+                                        <div class="nav-item">
+                                            <i class="fa-solid fa-user"></i>
+                                            <span>PROFILE</span>
+                                        </div>
+                                        <div class="home-indicator"></div>
+                                    </div>
                                 </div>
-                                <div class="checkout-body" id="checkout-body-view">
-                                    <div class="items-card">
-                                        <div class="item-row">
-                                            <div class="item-info">
-                                                <i class="fa-solid fa-square-check text-green"></i>
-                                                <div>
-                                                    <h4>Palak Paneer</h4>
-                                                    <p>Limit - <strong>12kg</strong></p>
+
+                                <!-- Detail View -->
+                                <div id="detail-view" class="donor-view hidden">
+                                    <div class="detail-header">
+                                        <i class="fa-solid fa-chevron-left btn-back-home"></i>
+                                    </div>
+                                    <div class="detail-body">
+                                        <div class="uni-header-card">
+                                            <div class="uni-title-row">
+                                                <h3>GURU GOBIND INDRAPRASTHA UNIVERSITY</h3>
+                                                <span class="veg-icon"><i class="fa-solid fa-circle"></i></span>
+                                            </div>
+                                            <p class="uni-meta">15 to 20 mins • 4km • Noida</p>
+                                        </div>
+                                        
+                                        <h4 class="meal-title-heading">Meal of the day</h4>
+                                        
+                                        <div class="meal-card">
+                                            <div class="meal-image-wrapper">
+                                                <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?q=80&w=600&auto=format&fit=crop" alt="Meal of the day Thali">
+                                                <div class="weight-badge">
+                                                    <span class="label">Total</span>
+                                                    <span class="value">36kg</span>
                                                 </div>
                                             </div>
-                                            <div class="item-actions">
-                                                <div class="counter">
-                                                    <button type="button" class="btn-minus">-</button>
-                                                    <span class="count">6</span>
-                                                    <button type="button" class="btn-plus">+</button>
+                                            <div class="meal-details">
+                                                <div class="meal-expand-row">
+                                                    <h4>Friday Special</h4>
+                                                    <i class="fa-solid fa-chevron-down"></i>
                                                 </div>
-                                                <span class="unit">(in kg)</span>
+                                                <p class="meal-menu">Palak paneer &bull; Jasmine rice &bull; Aloo gobhi</p>
                                             </div>
                                         </div>
-                                        <div class="item-row">
-                                            <div class="item-info">
-                                                <i class="fa-solid fa-square-check text-green"></i>
-                                                <div>
-                                                    <h4>Jasmine Rice</h4>
-                                                    <p>Limit - <strong>14kg</strong></p>
+                                    </div>
+                                    <div class="detail-footer">
+                                        <button type="button" class="btn btn-primary btn-full" id="btn-continue-checkout">Continue</button>
+                                        <div class="home-indicator"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Checkout View -->
+                                <div id="checkout-view" class="donor-view checkout-screen hidden">
+                                    <div class="checkout-header" id="checkout-header-view">
+                                        <i class="fa-solid fa-chevron-left" id="btn-back-detail"></i>
+                                        <div class="header-text">
+                                            <span class="small-title">CHECKOUT</span>
+                                            <h2>GURU GOBIND SINGH</h2>
+                                        </div>
+                                        <div style="width: 16px;"></div> <!-- Spacer -->
+                                    </div>
+                                    <div class="checkout-body" id="checkout-body-view">
+                                        <div class="items-card">
+                                            <div class="item-row">
+                                                <div class="item-info">
+                                                    <i class="fa-solid fa-square-check text-green"></i>
+                                                    <div>
+                                                        <h4>Palak Paneer</h4>
+                                                        <p>Limit - <strong>12kg</strong></p>
+                                                    </div>
+                                                </div>
+                                                <div class="item-actions">
+                                                    <div class="counter">
+                                                        <button type="button" class="btn-minus">-</button>
+                                                        <span class="count">6</span>
+                                                        <button type="button" class="btn-plus">+</button>
+                                                    </div>
+                                                    <span class="unit">(in kg)</span>
                                                 </div>
                                             </div>
-                                            <div class="item-actions">
-                                                <div class="counter">
-                                                    <button type="button" class="btn-minus">-</button>
-                                                    <span class="count">6</span>
-                                                    <button type="button" class="btn-plus">+</button>
+                                            <div class="item-row">
+                                                <div class="item-info">
+                                                    <i class="fa-solid fa-square-check text-green"></i>
+                                                    <div>
+                                                        <h4>Jasmine Rice</h4>
+                                                        <p>Limit - <strong>14kg</strong></p>
+                                                    </div>
                                                 </div>
-                                                <span class="unit">(in kg)</span>
+                                                <div class="item-actions">
+                                                    <div class="counter">
+                                                        <button type="button" class="btn-minus">-</button>
+                                                        <span class="count">6</span>
+                                                        <button type="button" class="btn-plus">+</button>
+                                                    </div>
+                                                    <span class="unit">(in kg)</span>
+                                                </div>
+                                            </div>
+                                            <div class="item-row">
+                                                <div class="item-info">
+                                                    <i class="fa-solid fa-square-check text-green"></i>
+                                                    <div>
+                                                        <h4>Aloo Gobhi</h4>
+                                                        <p>Limit - <strong>10kg</strong></p>
+                                                    </div>
+                                                </div>
+                                                <div class="item-actions">
+                                                    <div class="counter">
+                                                        <button type="button" class="btn-minus">-</button>
+                                                        <span class="count">4</span>
+                                                        <button type="button" class="btn-plus">+</button>
+                                                    </div>
+                                                    <span class="unit">(in kg)</span>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="item-row">
-                                            <div class="item-info">
-                                                <i class="fa-solid fa-square-check text-green"></i>
+                                        
+                                        <div class="info-card">
+                                            <div class="info-row">
                                                 <div>
-                                                    <h4>Aloo Gobhi</h4>
-                                                    <p>Limit - <strong>10kg</strong></p>
+                                                    <h4>Pickup at*</h4>
+                                                    <p>GGSIPU, Vishwas Nagar, Shahdara....</p>
                                                 </div>
+                                                <i class="fa-solid fa-chevron-right text-muted"></i>
                                             </div>
-                                            <div class="item-actions">
-                                                <div class="counter">
-                                                    <button type="button" class="btn-minus">-</button>
-                                                    <span class="count">4</span>
-                                                    <button type="button" class="btn-plus">+</button>
+                                            <div class="info-divider"></div>
+                                            <div class="info-row">
+                                                <div>
+                                                    <h4>Contact Info</h4>
+                                                    <p>Akash Rai, +91 838606822</p>
                                                 </div>
-                                                <span class="unit">(in kg)</span>
+                                                <i class="fa-solid fa-chevron-right text-muted"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="summary-card">
+                                            <div class="summary-row">
+                                                <div>
+                                                    <h4>Items sub total</h4>
+                                                    <p class="small">Rs. 10 per kg</p>
+                                                </div>
+                                                <h4 class="price" id="sub-total">Rs. 160.00</h4>
+                                            </div>
+                                            <div class="summary-row">
+                                                <h4>Delivery Fee</h4>
+                                                <h4 class="price">Rs. 100.00</h4>
+                                            </div>
+                                            <div class="summary-divider"></div>
+                                            <div class="summary-row total">
+                                                <h4>Total amount</h4>
+                                                <h4 class="price underline" id="total-amount">Rs. 260</h4>
                                             </div>
                                         </div>
                                     </div>
                                     
-                                    <div class="info-card">
-                                        <div class="info-row">
-                                            <div>
-                                                <h4>Pickup at*</h4>
-                                                <p>GGSIPU, Vishwas Nagar, Shahdara....</p>
-                                            </div>
-                                            <i class="fa-solid fa-chevron-right text-muted"></i>
-                                        </div>
-                                        <div class="info-divider"></div>
-                                        <div class="info-row">
-                                            <div>
-                                                <h4>Contact Info</h4>
-                                                <p>Akash Rai, +91 838606822</p>
-                                            </div>
-                                            <i class="fa-solid fa-chevron-right text-muted"></i>
-                                        </div>
-                                    </div>
-
-                                    <div class="summary-card">
-                                        <div class="summary-row">
-                                            <div>
-                                                <h4>Items sub total</h4>
-                                                <p class="small">Rs. 10 per kg</p>
-                                            </div>
-                                            <h4 class="price" id="sub-total">Rs. 160.00</h4>
-                                        </div>
-                                        <div class="summary-row">
-                                            <h4>Delivery Fee</h4>
-                                            <h4 class="price">Rs. 100.00</h4>
-                                        </div>
-                                        <div class="summary-divider"></div>
-                                        <div class="summary-row total">
-                                            <h4>Total amount</h4>
-                                            <h4 class="price underline" id="total-amount">Rs. 260</h4>
-                                        </div>
+                                    <div class="checkout-footer" id="checkout-footer-view">
+                                        <button type="button" class="btn btn-primary btn-full" id="btn-place-order">Place Order</button>
                                     </div>
                                 </div>
-                                
-                                <div class="checkout-footer" id="checkout-footer-view">
-                                    <button type="button" class="btn btn-primary btn-full" id="btn-place-order">Place Order</button>
-                                </div>
-                                
                                 <div id="demo-success-msg" class="demo-success hidden">
                                     <i class="fa-solid fa-circle-check"></i>
                                     <h4>Order Placed!</h4>
@@ -493,6 +665,6 @@
     </main>
 
     <!-- Connect External Script -->
-    <script src="app.js?v=3"></script>
+    <script src="app.js?v=4"></script>
 </body>
 </html>

@@ -194,6 +194,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const checkoutBody = document.getElementById('checkout-body-view');
     const checkoutFooter = document.getElementById('checkout-footer-view');
     
+    // Multi-view navigation variables
+    const homeView = document.getElementById('home-view');
+    const detailView = document.getElementById('detail-view');
+    const checkoutView = document.getElementById('checkout-view');
+    const cardGgsipu = document.getElementById('card-ggsipu');
+    const btnBackHome = document.querySelector('.btn-back-home');
+    const btnContinueCheckout = document.getElementById('btn-continue-checkout');
+    const btnBackDetail = document.getElementById('btn-back-detail');
+
     const ngoEmpty = document.getElementById('ngo-empty');
     const ngoAlert = document.getElementById('ngo-alert');
     const ngoAccepted = document.getElementById('ngo-accepted');
@@ -204,6 +213,35 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const btnAccept = document.getElementById('btn-accept');
     const btnDecline = document.getElementById('btn-decline');
+
+    // Attach navigation event listeners
+    if (cardGgsipu) {
+        cardGgsipu.addEventListener('click', () => {
+            if (homeView) homeView.classList.add('hidden');
+            if (detailView) detailView.classList.remove('hidden');
+        });
+    }
+
+    if (btnBackHome) {
+        btnBackHome.addEventListener('click', () => {
+            if (detailView) detailView.classList.add('hidden');
+            if (homeView) homeView.classList.remove('hidden');
+        });
+    }
+
+    if (btnContinueCheckout) {
+        btnContinueCheckout.addEventListener('click', () => {
+            if (detailView) detailView.classList.add('hidden');
+            if (checkoutView) checkoutView.classList.remove('hidden');
+        });
+    }
+
+    if (btnBackDetail) {
+        btnBackDetail.addEventListener('click', () => {
+            if (checkoutView) checkoutView.classList.add('hidden');
+            if (detailView) detailView.classList.remove('hidden');
+        });
+    }
 
     if (btnPlaceOrder) {
         // Handle plus/minus buttons interactively
@@ -226,7 +264,6 @@ document.addEventListener('DOMContentLoaded', () => {
             
             btnPlus.addEventListener('click', () => {
                 let count = parseInt(countSpan.textContent);
-                // Hardcode limit logic loosely
                 countSpan.textContent = count + 1;
                 updateTotals();
             });
@@ -241,8 +278,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const subTotal = totalKg * 10;
             const deliveryFee = 100;
             
-            subTotalEl.textContent = `Rs. ${subTotal.toFixed(2)}`;
-            totalAmountEl.textContent = `Rs. ${subTotal + deliveryFee}`;
+            if (subTotalEl) subTotalEl.textContent = `Rs. ${subTotal.toFixed(2)}`;
+            if (totalAmountEl) totalAmountEl.textContent = `Rs. ${subTotal + deliveryFee}`;
         }
 
         btnPlaceOrder.addEventListener('click', (e) => {
@@ -259,30 +296,31 @@ document.addEventListener('DOMContentLoaded', () => {
             if (checkoutHeader) checkoutHeader.classList.add('hidden');
             if (checkoutBody) checkoutBody.classList.add('hidden');
             if (checkoutFooter) checkoutFooter.classList.add('hidden');
-            demoSuccessMsg.classList.remove('hidden');
+            if (checkoutView) checkoutView.classList.add('hidden');
+            if (demoSuccessMsg) demoSuccessMsg.classList.remove('hidden');
             
             // Simulate network delay then show alert on NGO screen
             setTimeout(() => {
-                ngoEmpty.classList.add('hidden');
+                if (ngoEmpty) ngoEmpty.classList.add('hidden');
                 
-                alertFoodType.textContent = "Mixed Order";
-                alertQuantity.textContent = totalKg + " kg";
-                alertLocation.textContent = location;
+                if (alertFoodType) alertFoodType.textContent = "Mixed Order";
+                if (alertQuantity) alertQuantity.textContent = totalKg + " kg";
+                if (alertLocation) alertLocation.textContent = location;
                 
-                ngoAlert.classList.remove('hidden');
+                if (ngoAlert) ngoAlert.classList.remove('hidden');
             }, 1500);
         });
 
         btnAccept.addEventListener('click', () => {
-            ngoAlert.classList.add('hidden');
-            ngoAccepted.classList.remove('hidden');
+            if (ngoAlert) ngoAlert.classList.add('hidden');
+            if (ngoAccepted) ngoAccepted.classList.remove('hidden');
             
             setTimeout(resetDemo, 4000);
         });
         
         btnDecline.addEventListener('click', () => {
-            ngoAlert.classList.add('hidden');
-            ngoEmpty.classList.remove('hidden');
+            if (ngoAlert) ngoAlert.classList.add('hidden');
+            if (ngoEmpty) ngoEmpty.classList.remove('hidden');
             
             resetDemo();
         });
@@ -291,11 +329,16 @@ document.addEventListener('DOMContentLoaded', () => {
             if (checkoutHeader) checkoutHeader.classList.remove('hidden');
             if (checkoutBody) checkoutBody.classList.remove('hidden');
             if (checkoutFooter) checkoutFooter.classList.remove('hidden');
-            demoSuccessMsg.classList.add('hidden');
+            if (demoSuccessMsg) demoSuccessMsg.classList.add('hidden');
             
-            ngoEmpty.classList.remove('hidden');
-            ngoAlert.classList.add('hidden');
-            ngoAccepted.classList.add('hidden');
+            // Reset donor flow to Home View
+            if (checkoutView) checkoutView.classList.add('hidden');
+            if (detailView) detailView.classList.add('hidden');
+            if (homeView) homeView.classList.remove('hidden');
+            
+            if (ngoEmpty) ngoEmpty.classList.remove('hidden');
+            if (ngoAlert) ngoAlert.classList.add('hidden');
+            if (ngoAccepted) ngoAccepted.classList.add('hidden');
         }
     }
 });
