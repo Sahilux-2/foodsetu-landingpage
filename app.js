@@ -185,4 +185,117 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // --- DEMO SIMULATOR LOGIC (SECTION 5) ---
+    const btnPlaceOrder = document.getElementById('btn-place-order');
+    const demoSuccessMsg = document.getElementById('demo-success-msg');
+    
+    const checkoutHeader = document.getElementById('checkout-header-view');
+    const checkoutBody = document.getElementById('checkout-body-view');
+    const checkoutFooter = document.getElementById('checkout-footer-view');
+    
+    const ngoEmpty = document.getElementById('ngo-empty');
+    const ngoAlert = document.getElementById('ngo-alert');
+    const ngoAccepted = document.getElementById('ngo-accepted');
+    
+    const alertFoodType = document.getElementById('alert-food-type');
+    const alertQuantity = document.getElementById('alert-quantity');
+    const alertLocation = document.getElementById('alert-location');
+    
+    const btnAccept = document.getElementById('btn-accept');
+    const btnDecline = document.getElementById('btn-decline');
+
+    if (btnPlaceOrder) {
+        // Handle plus/minus buttons interactively
+        const counters = document.querySelectorAll('.counter');
+        const subTotalEl = document.getElementById('sub-total');
+        const totalAmountEl = document.getElementById('total-amount');
+
+        counters.forEach(counter => {
+            const btnMinus = counter.querySelector('.btn-minus');
+            const btnPlus = counter.querySelector('.btn-plus');
+            const countSpan = counter.querySelector('.count');
+            
+            btnMinus.addEventListener('click', () => {
+                let count = parseInt(countSpan.textContent);
+                if (count > 0) {
+                    countSpan.textContent = count - 1;
+                    updateTotals();
+                }
+            });
+            
+            btnPlus.addEventListener('click', () => {
+                let count = parseInt(countSpan.textContent);
+                // Hardcode limit logic loosely
+                countSpan.textContent = count + 1;
+                updateTotals();
+            });
+        });
+
+        function updateTotals() {
+            let totalKg = 0;
+            document.querySelectorAll('.count').forEach(span => {
+                totalKg += parseInt(span.textContent);
+            });
+            
+            const subTotal = totalKg * 10;
+            const deliveryFee = 100;
+            
+            subTotalEl.textContent = `Rs. ${subTotal.toFixed(2)}`;
+            totalAmountEl.textContent = `Rs. ${subTotal + deliveryFee}`;
+        }
+
+        btnPlaceOrder.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Get form values for alert
+            let totalKg = 0;
+            document.querySelectorAll('.count').forEach(span => {
+                totalKg += parseInt(span.textContent);
+            });
+            const location = "GGSIPU, Vishwas Nagar";
+            
+            // Show success on donor screen
+            if (checkoutHeader) checkoutHeader.classList.add('hidden');
+            if (checkoutBody) checkoutBody.classList.add('hidden');
+            if (checkoutFooter) checkoutFooter.classList.add('hidden');
+            demoSuccessMsg.classList.remove('hidden');
+            
+            // Simulate network delay then show alert on NGO screen
+            setTimeout(() => {
+                ngoEmpty.classList.add('hidden');
+                
+                alertFoodType.textContent = "Mixed Order";
+                alertQuantity.textContent = totalKg + " kg";
+                alertLocation.textContent = location;
+                
+                ngoAlert.classList.remove('hidden');
+            }, 1500);
+        });
+
+        btnAccept.addEventListener('click', () => {
+            ngoAlert.classList.add('hidden');
+            ngoAccepted.classList.remove('hidden');
+            
+            setTimeout(resetDemo, 4000);
+        });
+        
+        btnDecline.addEventListener('click', () => {
+            ngoAlert.classList.add('hidden');
+            ngoEmpty.classList.remove('hidden');
+            
+            resetDemo();
+        });
+
+        function resetDemo() {
+            if (checkoutHeader) checkoutHeader.classList.remove('hidden');
+            if (checkoutBody) checkoutBody.classList.remove('hidden');
+            if (checkoutFooter) checkoutFooter.classList.remove('hidden');
+            demoSuccessMsg.classList.add('hidden');
+            
+            ngoEmpty.classList.remove('hidden');
+            ngoAlert.classList.add('hidden');
+            ngoAccepted.classList.add('hidden');
+        }
+    }
 });

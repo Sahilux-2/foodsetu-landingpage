@@ -12,7 +12,7 @@
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Main Style Sheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
     <!-- Premium Glassmorphic Header -->
@@ -323,9 +323,176 @@
 
             </div>
         </section>
+
+        <!-- Section 5: Product Demo Simulator -->
+        <section class="demo-section" id="demo">
+            <div class="section-container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Experience the <span class="text-primary">Platform</span></h2>
+                    <p class="section-desc mx-auto">Try our interactive simulator to see how easy it is to donate food and how NGOs receive alerts.</p>
+                </div>
+                
+                <div class="demo-grid">
+                    <!-- Left: Interactive Form -->
+                    <div class="demo-phone">
+                        <div class="phone-frame">
+                            <div class="phone-notch"></div>
+                            <div class="phone-screen checkout-screen" id="donor-screen">
+                                <div class="checkout-header" id="checkout-header-view">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                    <div class="header-text">
+                                        <span class="small-title">CHECKOUT</span>
+                                        <h2>GURU GOBIND SINGH</h2>
+                                    </div>
+                                    <div style="width: 16px;"></div> <!-- Spacer -->
+                                </div>
+                                <div class="checkout-body" id="checkout-body-view">
+                                    <div class="items-card">
+                                        <div class="item-row">
+                                            <div class="item-info">
+                                                <i class="fa-solid fa-square-check text-green"></i>
+                                                <div>
+                                                    <h4>Palak Paneer</h4>
+                                                    <p>Limit - <strong>12kg</strong></p>
+                                                </div>
+                                            </div>
+                                            <div class="item-actions">
+                                                <div class="counter">
+                                                    <button type="button" class="btn-minus">-</button>
+                                                    <span class="count">6</span>
+                                                    <button type="button" class="btn-plus">+</button>
+                                                </div>
+                                                <span class="unit">(in kg)</span>
+                                            </div>
+                                        </div>
+                                        <div class="item-row">
+                                            <div class="item-info">
+                                                <i class="fa-solid fa-square-check text-green"></i>
+                                                <div>
+                                                    <h4>Jasmine Rice</h4>
+                                                    <p>Limit - <strong>14kg</strong></p>
+                                                </div>
+                                            </div>
+                                            <div class="item-actions">
+                                                <div class="counter">
+                                                    <button type="button" class="btn-minus">-</button>
+                                                    <span class="count">6</span>
+                                                    <button type="button" class="btn-plus">+</button>
+                                                </div>
+                                                <span class="unit">(in kg)</span>
+                                            </div>
+                                        </div>
+                                        <div class="item-row">
+                                            <div class="item-info">
+                                                <i class="fa-solid fa-square-check text-green"></i>
+                                                <div>
+                                                    <h4>Aloo Gobhi</h4>
+                                                    <p>Limit - <strong>10kg</strong></p>
+                                                </div>
+                                            </div>
+                                            <div class="item-actions">
+                                                <div class="counter">
+                                                    <button type="button" class="btn-minus">-</button>
+                                                    <span class="count">4</span>
+                                                    <button type="button" class="btn-plus">+</button>
+                                                </div>
+                                                <span class="unit">(in kg)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="info-card">
+                                        <div class="info-row">
+                                            <div>
+                                                <h4>Pickup at*</h4>
+                                                <p>GGSIPU, Vishwas Nagar, Shahdara....</p>
+                                            </div>
+                                            <i class="fa-solid fa-chevron-right text-muted"></i>
+                                        </div>
+                                        <div class="info-divider"></div>
+                                        <div class="info-row">
+                                            <div>
+                                                <h4>Contact Info</h4>
+                                                <p>Akash Rai, +91 838606822</p>
+                                            </div>
+                                            <i class="fa-solid fa-chevron-right text-muted"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="summary-card">
+                                        <div class="summary-row">
+                                            <div>
+                                                <h4>Items sub total</h4>
+                                                <p class="small">Rs. 10 per kg</p>
+                                            </div>
+                                            <h4 class="price" id="sub-total">Rs. 160.00</h4>
+                                        </div>
+                                        <div class="summary-row">
+                                            <h4>Delivery Fee</h4>
+                                            <h4 class="price">Rs. 100.00</h4>
+                                        </div>
+                                        <div class="summary-divider"></div>
+                                        <div class="summary-row total">
+                                            <h4>Total amount</h4>
+                                            <h4 class="price underline" id="total-amount">Rs. 260</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="checkout-footer" id="checkout-footer-view">
+                                    <button type="button" class="btn btn-primary btn-full" id="btn-place-order">Place Order</button>
+                                </div>
+                                
+                                <div id="demo-success-msg" class="demo-success hidden">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <h4>Order Placed!</h4>
+                                    <p>Waiting for confirmation...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: NGO Alert / Visualization -->
+                    <div class="demo-phone">
+                        <div class="phone-frame">
+                            <div class="phone-notch"></div>
+                            <div class="phone-screen ngo-screen" id="ngo-screen">
+                                <div class="app-header">
+                                    <h3>NGO Dashboard</h3>
+                                    <i class="fa-solid fa-bell"></i>
+                                </div>
+                                <div class="app-body bg-gray">
+                                    <div class="empty-state" id="ngo-empty">
+                                        <i class="fa-solid fa-satellite-dish"></i>
+                                        <p>Listening for nearby donations...</p>
+                                    </div>
+                                    
+                                    <div class="alert-card hidden" id="ngo-alert">
+                                        <div class="alert-badge pulse">NEW DONATION NEARBY</div>
+                                        <h4 id="alert-food-type">Cooked Food</h4>
+                                        <p><i class="fa-solid fa-location-dot"></i> <span id="alert-location">123 Main St</span> (2.5 km away)</p>
+                                        <p><i class="fa-solid fa-scale-balanced"></i> <span id="alert-quantity">50</span> Meals</p>
+                                        <div class="alert-actions">
+                                            <button class="btn btn-secondary btn-sm" id="btn-decline" type="button">Self pickup</button>
+                                            <button class="btn btn-primary btn-sm" id="btn-accept" type="button">Accept Pickup</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="accepted-state hidden" id="ngo-accepted">
+                                        <i class="fa-solid fa-truck-fast text-primary"></i>
+                                        <h4>Pickup Confirmed</h4>
+                                        <p>Volunteer routed to location.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Connect External Script -->
-    <script src="app.js"></script>
+    <script src="app.js?v=3"></script>
 </body>
 </html>
