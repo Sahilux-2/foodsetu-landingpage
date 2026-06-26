@@ -341,4 +341,31 @@ document.addEventListener('DOMContentLoaded', () => {
             if (ngoAccepted) ngoAccepted.classList.add('hidden');
         }
     }
+
+    // --- NAV LINK ACTIVE ON SCROLL ---
+    const sections = document.querySelectorAll('section[id]');
+    const scrollNavLinks = document.querySelectorAll('.nav-menu a.nav-link');
+    
+    function highlightNav() {
+        const scrollPosition = window.scrollY + 150; // offset for the fixed header
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                scrollNavLinks.forEach(link => {
+                    if (link.getAttribute('href') === `#${sectionId}`) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', highlightNav);
+    highlightNav();
 });
